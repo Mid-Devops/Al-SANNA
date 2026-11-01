@@ -1,0 +1,17 @@
+<svg width="760" height="200" viewBox="0 0 760 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="200" rx="20" fill="#F5F9FE"/>
+  <g transform="translate(20 20)">
+    <path d="M50 18C50 8.05888 58.0589 0 68 0H101.5C111.441 0 119.5 8.05888 119.5 18V46.5C119.5 56.4411 111.441 64.5 101.5 64.5H68C58.0589 64.5 50 56.4411 50 46.5V18Z" fill="#0C2D52"/>
+    <path d="M66 78.5H103.5C113.441 78.5 121.5 86.5589 121.5 96.5V128.5C121.5 138.441 113.441 146.5 103.5 146.5H66C55.5063 146.5 46.5 137.494 46.5 128V96.5C46.5 86.5589 54.5589 78.5 64.5 78.5H66Z" fill="#1E9E9A"/>
+    <path d="M132 34L165 34C174.941 34 183 42.0589 183 52V92.5C183 102.441 174.941 110.5 165 110.5H132.5V34H132Z" fill="#F4A261"/>
+    <path d="M128 32H170.5C179.613 32 187 39.3873 187 48.5V94.5C187 103.613 179.613 111 170.5 111H128V32Z" fill="#0C2D52"/>
+    <path d="M131.5 32V111H154V32H131.5Z" fill="#1E9E9A"/>
+    <path d="M171 38L176.5 68.5L187 38H171Z" fill="#F4A261"/>
+    <path d="M164 105L180 105L198 135H182L164 105Z" fill="#1E9E9A"/>
+    <path d="M90 150H230V168H90V150Z" fill="#0C2D52"/>
+  </g>
+  <g transform="translate(220 22)">
+    <text x="0" y="86" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#0C2D52" letter-spacing="1.2">ALSANNA</text>
+    <text x="2" y="132" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" fill="#1E9E9A" letter-spacing="2.5">FIBER GLASS MANUFACTURING LLC</text>
+  </g>
+</svg>

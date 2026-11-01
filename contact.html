@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact AlSanna Fiber Glass Manufacturing LLC for quote requests, product inquiries, and industrial fiberglass solutions." />
+    <title>Contact | AlSanna Fiber Glass Manufacturing LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="AlSanna home">
+          <img src="assets/logo.svg" alt="AlSanna logo" class="brand-logo" />
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html">Products</a>
+          <a href="product-details.html">Product Details</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+
+        <a href="contact.html" class="btn btn-primary nav-cta">Get a Quote</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero small-hero">
+        <div class="container">
+          <p class="eyebrow accent">Contact Us</p>
+          <h1>Let’s discuss your fiberglass requirements.</h1>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-layout">
+          <div class="contact-card">
+            <h2>Request a quote</h2>
+            <form class="contact-form" id="contactForm">
+              <div class="input-row">
+                <input type="text" name="name" placeholder="Your Name" aria-label="Your name" required />
+              </div>
+              <div class="input-row">
+                <input type="email" name="email" placeholder="Email Address" aria-label="Email address" required />
+              </div>
+              <div class="input-row">
+                <input type="text" name="company" placeholder="Company Name" aria-label="Company name" />
+              </div>
+              <div class="input-row">
+                <textarea name="message" rows="5" placeholder="Tell us about your project or product requirement" aria-label="Project details" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Enquiry</button>
+            </form>
+          </div>
+
+          <div class="contact-info">
+            <div class="info-card">
+              <p class="eyebrow accent">Reach Us</p>
+              <h3>AlSanna Fiber Glass Manufacturing LLC</h3>
+              <ul class="detail-list">
+                <li>Sharjah, United Arab Emirates</li>
+                <li>+971 00 000 0000</li>
+                <li>sales@alsanna-fiberglass.com</li>
+              </ul>
+              <p>We provide fiberglass manufacturing and composite solutions for industrial, commercial, and infrastructure projects across the UAE and wider regional market.</p>
+            </div>
+            <div class="info-card">
+              <p class="eyebrow accent">Business Hours</p>
+              <ul class="detail-list">
+                <li>Monday – Friday: 8:00 AM – 6:00 PM</li>
+                <li>Saturday: 9:00 AM – 2:00 PM</li>
+                <li>Sunday: Closed</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand footer-brand">
+            <img src="assets/logo.svg" alt="AlSanna logo" class="brand-logo footer-logo" />
+          </a>
+          <p>Reliable fiberglass manufacturing solutions for industrial, commercial, and infrastructure needs.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="product-details.html">Details</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul class="footer-list">
+            <li>Sharjah, UAE</li>
+            <li>+971 00 000 0000</li>
+            <li>sales@alsanna-fiberglass.com</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span id="year"></span> AlSanna Fiber Glass Manufacturing LLC. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
