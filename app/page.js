@@ -1,12 +1,21 @@
-import SiteHeader from '../components/SiteHeader';
-import SiteFooter from '../components/SiteFooter';
-import { HomeContent } from '../components/CompanyPages';
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
+import { HomeContent } from "../components/CompanyPages";
+import { createPageMetadata } from "./metadata";
 
-export const metadata = {
-  title: 'Al Sanna Tank & Sheds Ind LLC | GRC & GRP Solutions',
-  description: 'Design, detailing, fabrication and installation of GRC and GRP products across the UAE and beyond.',
-};
+export const metadata = createPageMetadata(
+  "Al Sanna Tank & Sheds Ind LLC | GRC & GRP Solutions",
+  "Design, detailing, fabrication and installation of GRC and GRP products across the UAE and beyond.",
+);
 
 export default function HomePage() {
-  return <><SiteHeader /><main><HomeContent /></main><SiteFooter /></>;
+  return (
+    <>
+      <SiteHeader />
+      <main>
+        <HomeContent />
+      </main>
+      <SiteFooter />
+    </>
+  );
 }

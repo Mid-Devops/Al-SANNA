@@ -1,0 +1,19 @@
+{
+  "name": "Al Sanna Tank & Sheds Ind LLC",
+  "short_name": "Al Sanna",
+  "theme_color": "#004AAD",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

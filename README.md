@@ -26,6 +26,23 @@ npm run dev
 
 Open http://localhost:3000. Create an optimized standalone production build with `npm run build`; run it with `npm run start`.
 
+Run `npm run format` to format supported source files, or `npm run format:check` to verify formatting.
+
+## Project structure
+
+```text
+app/                  Next.js routes, metadata, and application styles
+components/            Shared React layout, page content, and interactions
+css/style.css          Stylesheet for the standalone HTML pages
+js/main.js             Deferred standalone-site interactions
+images/                Assets used by standalone HTML pages
+public/                Assets served by Next.js
+scripts/               Build and deployment helpers
+*.html                 Standalone home, about, products, details, and contact pages
+```
+
+The standalone HTML pages load `css/style.css` and deferred `js/main.js`; the Next.js app has separate styles in `app/company.css`. Existing raster artwork can be converted to WebP or AVIF to reduce transfer size; retain descriptive alternatives and verify image quality before replacing originals.
+
 ## Edit the site
 
 - Shared navigation and footer: `components/SiteHeader.js`, `components/SiteFooter.js`
@@ -39,4 +56,4 @@ The product artwork currently uses local SVG placeholders in `public/images/prod
 
 ## Standalone deployment
 
-The production build writes a self-contained Node server to `.next/standalone`. Copy the standalone output together with `.next/static` and `public` to the target host, then start `server.js` with Node.js. The host must support the Node.js version required by the installed Next.js release.
+The production build writes a runnable Node server and copies the required `public` and `.next/static` assets into `.next/standalone`. Deploy that directory and start `server.js` with Node.js. The host must support the Node.js version required by the installed Next.js release.

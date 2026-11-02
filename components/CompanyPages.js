@@ -1,34 +1,133 @@
-import Link from 'next/link';
-import { ContactForm, FacilitySearchTable, ProductGallery } from './Interactions';
+import Link from "next/link";
+import { ContactForm, FacilitySearchTable, ProductGallery } from "./Interactions";
 
 const grcProducts = [
-  { title: 'Architectural Facade', caption: 'Lightweight exterior detailing', image: '/images/products/grc-placeholder.svg', alt: 'Illustrated architectural facade in GRC', category: 'GRC' },
-  { title: 'Villa Cornice', caption: 'Custom profiles and mouldings', image: '/images/products/grc-placeholder.svg', alt: 'Illustrated GRC villa cornice profile', category: 'GRC' },
-  { title: 'Decorative Screen', caption: 'Patterned architectural panels', image: '/images/products/grc-placeholder.svg', alt: 'Illustrated decorative GRC screen panel', category: 'GRC' },
-  { title: 'Planter Collection', caption: 'Made-to-order shapes and finishes', image: '/images/products/grc-placeholder.svg', alt: 'Illustrated GRC planter pot', category: 'GRC' },
-  { title: 'Sound Barrier', caption: 'Robust outdoor acoustic panels', image: '/images/products/grc-placeholder.svg', alt: 'Illustrated GRC sound barrier panels', category: 'GRC' },
-  { title: 'Park Feature', caption: 'Durable landscape elements', image: '/images/products/grc-placeholder.svg', alt: 'Illustrated GRC public park feature', category: 'GRC' },
+  {
+    title: "Architectural Facade",
+    caption: "Lightweight exterior detailing",
+    image: "/images/products/grc-placeholder.svg",
+    alt: "Illustrated architectural facade in GRC",
+    category: "GRC",
+  },
+  {
+    title: "Villa Cornice",
+    caption: "Custom profiles and mouldings",
+    image: "/images/products/grc-placeholder.svg",
+    alt: "Illustrated GRC villa cornice profile",
+    category: "GRC",
+  },
+  {
+    title: "Decorative Screen",
+    caption: "Patterned architectural panels",
+    image: "/images/products/grc-placeholder.svg",
+    alt: "Illustrated decorative GRC screen panel",
+    category: "GRC",
+  },
+  {
+    title: "Planter Collection",
+    caption: "Made-to-order shapes and finishes",
+    image: "/images/products/grc-placeholder.svg",
+    alt: "Illustrated GRC planter pot",
+    category: "GRC",
+  },
+  {
+    title: "Sound Barrier",
+    caption: "Robust outdoor acoustic panels",
+    image: "/images/products/grc-placeholder.svg",
+    alt: "Illustrated GRC sound barrier panels",
+    category: "GRC",
+  },
+  {
+    title: "Park Feature",
+    caption: "Durable landscape elements",
+    image: "/images/products/grc-placeholder.svg",
+    alt: "Illustrated GRC public park feature",
+    category: "GRC",
+  },
 ];
 
 const grpProducts = [
-  { title: 'GRP Storage Tank', caption: 'Corrosion-resistant storage', image: '/images/products/grp-placeholder.svg', alt: 'Illustrated vertical GRP storage tank', category: 'GRP' },
-  { title: 'Industrial Enclosure', caption: 'Weather-resistant protection', image: '/images/products/grp-placeholder.svg', alt: 'Illustrated industrial GRP enclosure', category: 'GRP' },
-  { title: 'GRP Canopy', caption: 'Lightweight shelter structures', image: '/images/products/grp-placeholder.svg', alt: 'Illustrated GRP canopy structure', category: 'GRP' },
-  { title: 'Chemical Process Vessel', caption: 'Built for demanding environments', image: '/images/products/grp-placeholder.svg', alt: 'Illustrated GRP process vessel', category: 'GRP' },
-  { title: 'Custom GRP Component', caption: 'Designed around your application', image: '/images/products/grp-placeholder.svg', alt: 'Illustrated custom GRP molded component', category: 'GRP' },
-  { title: 'GRP Shed', caption: 'Practical modular solutions', image: '/images/products/grp-placeholder.svg', alt: 'Illustrated GRP service shed', category: 'GRP' },
+  {
+    title: "GRP Storage Tank",
+    caption: "Corrosion-resistant storage",
+    image: "/images/products/grp-placeholder.svg",
+    alt: "Illustrated vertical GRP storage tank",
+    category: "GRP",
+  },
+  {
+    title: "Industrial Enclosure",
+    caption: "Weather-resistant protection",
+    image: "/images/products/grp-placeholder.svg",
+    alt: "Illustrated industrial GRP enclosure",
+    category: "GRP",
+  },
+  {
+    title: "GRP Canopy",
+    caption: "Lightweight shelter structures",
+    image: "/images/products/grp-placeholder.svg",
+    alt: "Illustrated GRP canopy structure",
+    category: "GRP",
+  },
+  {
+    title: "Chemical Process Vessel",
+    caption: "Built for demanding environments",
+    image: "/images/products/grp-placeholder.svg",
+    alt: "Illustrated GRP process vessel",
+    category: "GRP",
+  },
+  {
+    title: "Custom GRP Component",
+    caption: "Designed around your application",
+    image: "/images/products/grp-placeholder.svg",
+    alt: "Illustrated custom GRP molded component",
+    category: "GRP",
+  },
+  {
+    title: "GRP Shed",
+    caption: "Practical modular solutions",
+    image: "/images/products/grp-placeholder.svg",
+    alt: "Illustrated GRP service shed",
+    category: "GRP",
+  },
 ];
 
 function PageHero({ eyebrow, title, description }) {
-  return <section className="page-hero"><div className="container page-hero-inner"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1>{description && <p className="page-lead">{description}</p>}</div></section>;
+  return (
+    <section className="page-hero">
+      <div className="container page-hero-inner">
+        <p className="eyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
+        {description && <p className="page-lead">{description}</p>}
+      </div>
+    </section>
+  );
 }
 
 function SectionHeading({ eyebrow, title, centered = false }) {
-  return <div className={`section-heading${centered ? ' centered' : ''}`}><p className="eyebrow">{eyebrow}</p><h2>{title}</h2></div>;
+  return (
+    <div className={`section-heading${centered ? " centered" : ""}`}>
+      <p className="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+    </div>
+  );
 }
 
-function QuoteBand({ title = 'Have a project in mind? Let’s build it together.' }) {
-  return <section className="quote-band"><div className="container quote-inner"><div><p className="eyebrow">Let’s work together</p><h2>{title}</h2></div><Link className="button button-white" href="/contact">Request a Quote <span aria-hidden="true">↗</span></Link></div></section>;
+function QuoteBand({ title = "Have a project in mind? Let’s build it together.", product }) {
+  const contactHref = product ? `/contact?product=${encodeURIComponent(product)}` : "/contact";
+  return (
+    <section className="quote-band">
+      <div className="container quote-inner">
+        <div>
+          <p className="eyebrow">Let’s work together</p>
+          <h2>{title}</h2>
+        </div>
+        <Link className="button button--white" href={contactHref}>
+          {product ? "Enquire about this product" : "Request a Quote"}{" "}
+          <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+    </section>
+  );
 }
 
 function ProductPageHero({ title, description }) {
@@ -37,76 +136,838 @@ function ProductPageHero({ title, description }) {
 
 export function HomeContent() {
   const services = [
-    ['01', 'GRC / GFRC', 'Architectural concrete elements, facades and decorative forms with a refined finish.'],
-    ['02', 'GRP / GFRP', 'Lightweight, durable composite products for demanding industrial applications.'],
-    ['03', 'Design & detailing', 'Project-specific development, coordination and technical detailing from concept to production.'],
-    ['04', 'Fabrication & installation', 'Integrated manufacturing and site installation with one accountable team.'],
+    [
+      "01",
+      "GRC / GFRC",
+      "Architectural concrete elements, facades and decorative forms with a refined finish.",
+    ],
+    [
+      "02",
+      "GRP / GFRP",
+      "Lightweight, durable composite products for demanding industrial applications.",
+    ],
+    [
+      "03",
+      "Design & detailing",
+      "Project-specific development, coordination and technical detailing from concept to production.",
+    ],
+    [
+      "04",
+      "Fabrication & installation",
+      "Integrated manufacturing and site installation with one accountable team.",
+    ],
   ];
-  const advantages = ['Advanced engineering with exceptional craftsmanship', 'Durable, lightweight and low-maintenance products', 'Specifications considered against British Standards', 'Custom shapes, colours and finishes', 'Warranties and responsive customer support'];
-  const applications = ['Buildings & villas', 'Parks', 'Sound barriers', 'Planter pots', 'Partition walls', 'Civil engineering', 'Marine', 'Chemical', 'Transportation'];
-  return <>
-    <section className="home-hero"><div className="container home-hero-grid"><div className="home-copy"><p className="eyebrow">Sharjah-based manufacturing since 2006</p><h1>Engineering Excellence in <span>GRC &amp; GRP</span> Solutions</h1><p className="hero-description">Design, detailing, fabrication and installation of Glass Fiber Reinforced Concrete and Glass Fiber Reinforced Plastic products across the UAE and beyond.</p><div className="hero-actions"><Link className="button button-blue" href="/products">Our Products <span aria-hidden="true">↗</span></Link><Link className="button button-outline" href="/contact">Contact Us</Link></div><p className="hero-arabic" lang="ar" dir="rtl">شركة السنا لخزانات ومستودعات الصناعات ذ.م.م</p></div><div className="hero-art"><img src="/images/hero.svg" alt="Architectural composite facade and industrial tank illustration" width="760" height="620" fetchPriority="high" /><div className="hero-stamp"><strong>20</strong><span>years of<br />making</span></div></div></div></section>
-    <section className="stats-strip" aria-label="Company facts"><div className="container stats-grid">{[['Since', '2006'], ['Based in', 'Sharjah, UAE'], ['Delivery', 'End-to-end services'], ['Workforce', '38+ skilled workers']].map(([label, value]) => <div className="stat" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div></section>
-    <section className="section"><div className="container"><SectionHeading eyebrow="Our capabilities" title="What we do" /><div className="service-grid">{services.map(([num, title, description]) => <article className="service-card" key={title}><span className="card-number">{num}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
-    <section className="section section-grey"><div className="container split-section"><div><p className="eyebrow">Why Al Sanna</p><h2>Built on engineering discipline. Finished with care.</h2><p className="section-intro">We bring design, fabrication and installation together to deliver composite solutions made for their place and purpose.</p></div><ul className="advantage-list">{advantages.map((item, index) => <li key={item}><span>0{index + 1}</span>{item}</li>)}</ul></div></section>
-    <section className="section"><div className="container"><SectionHeading eyebrow="Built for many environments" title="Where our products are used" /><div className="application-grid">{applications.map((item, index) => <div className="application-item" key={item}><span>0{index + 1}</span><strong>{item}</strong></div>)}</div></div></section>
-    <QuoteBand />
-  </>;
+  const advantages = [
+    "Advanced engineering with exceptional craftsmanship",
+    "Durable, lightweight and low-maintenance products",
+    "Specifications considered against British Standards",
+    "Custom shapes, colours and finishes",
+    "Warranties and responsive customer support",
+  ];
+  const applications = [
+    "Buildings & villas",
+    "Parks",
+    "Sound barriers",
+    "Planter pots",
+    "Partition walls",
+    "Civil engineering",
+    "Marine",
+    "Chemical",
+    "Transportation",
+  ];
+  return (
+    <>
+      <section className="home-hero">
+        <div className="container home-hero-grid">
+          <div className="home-copy">
+            <p className="eyebrow">Sharjah-based manufacturing since 2006</p>
+            <h1>
+              Engineering Excellence in <span>GRC &amp; GRP</span> Solutions
+            </h1>
+            <p className="hero-description">
+              Design, detailing, fabrication and installation of Glass Fiber Reinforced Concrete and
+              Glass Fiber Reinforced Plastic products across the UAE and beyond.
+            </p>
+            <div className="hero-actions">
+              <Link className="button button--blue" href="/products">
+                Our Products <span aria-hidden="true">↗</span>
+              </Link>
+              <Link className="button button--outline" href="/contact">
+                Contact Us
+              </Link>
+            </div>
+            <p className="hero-arabic" lang="ar" dir="rtl">
+              شركة السنا لخزانات ومستودعات الصناعات ذ.م.م
+            </p>
+          </div>
+          <div className="hero-art">
+            <img
+              src="/images/hero.svg"
+              alt="Architectural composite facade and industrial tank illustration"
+              width="760"
+              height="620"
+              fetchPriority="high"
+            />
+            <div className="hero-stamp">
+              <strong>20</strong>
+              <span>
+                years of
+                <br />
+                making
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="stats-strip" aria-label="Company facts">
+        <div className="container stats-grid">
+          {[
+            ["Since", "2006"],
+            ["Based in", "Sharjah, UAE"],
+            ["Delivery", "End-to-end services"],
+            ["Workforce", "38+ skilled workers"],
+          ].map(([label, value]) => (
+            <div className="stat" key={label}>
+              <span>{label}</span>
+              <strong>{value}</strong>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <SectionHeading eyebrow="Our capabilities" title="What we do" />
+          <div className="service-grid">
+            {services.map(([num, title, description]) => (
+              <article className="service-card" key={title}>
+                <span className="card-number">{num}</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section section-grey">
+        <div className="container split-section">
+          <div>
+            <p className="eyebrow">Why Al Sanna</p>
+            <h2>Built on engineering discipline. Finished with care.</h2>
+            <p className="section-intro">
+              We bring design, fabrication and installation together to deliver composite solutions
+              made for their place and purpose.
+            </p>
+          </div>
+          <ul className="advantage-list">
+            {advantages.map((item, index) => (
+              <li key={item}>
+                <span>0{index + 1}</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Built for many environments"
+            title="Where our products are used"
+          />
+          <div className="application-grid">
+            {applications.map((item, index) => (
+              <div className="application-item" key={item}>
+                <span>0{index + 1}</span>
+                <strong>{item}</strong>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <QuoteBand />
+    </>
+  );
 }
 
 export function AboutContent() {
-  const values = [['Quality', 'A dependable standard in every specification, process and finished product.'], ['Integrity', 'Straightforward communication and responsible decisions at every stage.'], ['Durability', 'Materials and workmanship selected for long-term performance.'], ['Customer satisfaction', 'Collaborative service shaped around project requirements.'], ['Sustainability', 'Thoughtful sourcing, efficient production and reduced waste.']];
-  return <><PageHero eyebrow="About Al Sanna" title="A UAE manufacturer built on experience and craftsmanship." description="Founded in 2006, Al Sanna Tanks & Sheds Industries L.L.C. has established itself as a leading innovator in the UAE, specializing in Glass Fiber Reinforced Concrete (GFRC) and Glass Fiber Reinforced Plastic (GFRP)." /><section className="section"><div className="container prose-layout"><div><SectionHeading eyebrow="Our company" title="From engineering intent to installed solution." /><p>Over the years, the company has built a strong reputation for delivering high-quality solutions that combine advanced engineering with exceptional craftsmanship.</p><p>We offer comprehensive end-to-end services that include design, detailing, fabrication and installation, ensuring precision, efficiency and reliability in every project. Headquartered in Sharjah, UAE, our organization brings long-standing industry expertise, positioning us as pioneers within the Arabian market.</p><p>We take great pride in our ability to integrate cutting-edge technology with skilled workmanship to produce a diverse range of solutions tailored to the unique requirements of our global clientele. Every product and service is crafted with a focus on durability, functionality and aesthetic excellence. Our commitment to quality ensures clients receive solutions that not only meet but exceed international standards.</p></div><aside className="company-facts"><span className="fact-year">2006</span><strong>Established in Sharjah</strong><p>GRC, GRP, GRE &amp; GRG division</p><span className="fact-rule"></span><strong>38+ skilled workers</strong><p>Design through installation</p></aside></div></section><section className="section section-grey"><div className="container"><SectionHeading eyebrow="Our principles" title="The values behind every project." centered /><div className="value-grid">{values.map(([title, description], index) => <article className="value-card" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section><section className="section"><div className="container manager-note"><p className="eyebrow">Leadership</p><h2>Message from the General Manager</h2><blockquote>“Our commitment is to combine technology with skilled workmanship and deliver dependable solutions that meet each client’s expectations. We are grateful for the trust of our customers and the dedication of our team.”</blockquote><p className="signature">Engr. Vijaya Kumar <span>General Manager</span></p></div></section><QuoteBand title="Tell us what you’re planning. We’ll help shape the solution." /></>;
+  const values = [
+    ["Quality", "A dependable standard in every specification, process and finished product."],
+    ["Integrity", "Straightforward communication and responsible decisions at every stage."],
+    ["Durability", "Materials and workmanship selected for long-term performance."],
+    ["Customer satisfaction", "Collaborative service shaped around project requirements."],
+    ["Sustainability", "Thoughtful sourcing, efficient production and reduced waste."],
+  ];
+  return (
+    <>
+      <PageHero
+        eyebrow="About Al Sanna"
+        title="A UAE manufacturer built on experience and craftsmanship."
+        description="Founded in 2006, Al Sanna Tanks & Sheds Industries L.L.C. has established itself as a leading innovator in the UAE, specializing in Glass Fiber Reinforced Concrete (GFRC) and Glass Fiber Reinforced Plastic (GFRP)."
+      />
+      <section className="section">
+        <div className="container prose-layout">
+          <div>
+            <SectionHeading
+              eyebrow="Our company"
+              title="From engineering intent to installed solution."
+            />
+            <p>
+              Over the years, the company has built a strong reputation for delivering high-quality
+              solutions that combine advanced engineering with exceptional craftsmanship.
+            </p>
+            <p>
+              We offer comprehensive end-to-end services that include design, detailing, fabrication
+              and installation, ensuring precision, efficiency and reliability in every project.
+              Headquartered in Sharjah, UAE, our organization brings long-standing industry
+              expertise, positioning us as pioneers within the Arabian market.
+            </p>
+            <p>
+              We take great pride in our ability to integrate cutting-edge technology with skilled
+              workmanship to produce a diverse range of solutions tailored to the unique
+              requirements of our global clientele. Every product and service is crafted with a
+              focus on durability, functionality and aesthetic excellence. Our commitment to quality
+              ensures clients receive solutions that not only meet but exceed international
+              standards.
+            </p>
+          </div>
+          <aside className="company-facts">
+            <span className="fact-year">2006</span>
+            <strong>Established in Sharjah</strong>
+            <p>GRC, GRP, GRE &amp; GRG division</p>
+            <span className="fact-rule"></span>
+            <strong>38+ skilled workers</strong>
+            <p>Design through installation</p>
+          </aside>
+        </div>
+      </section>
+      <section className="section section-grey">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Our principles"
+            title="The values behind every project."
+            centered
+          />
+          <div className="value-grid">
+            {values.map(([title, description], index) => (
+              <article className="value-card" key={title}>
+                <span>0{index + 1}</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container manager-note">
+          <p className="eyebrow">Leadership</p>
+          <h2>Message from the General Manager</h2>
+          <blockquote>
+            “Our commitment is to combine technology with skilled workmanship and deliver dependable
+            solutions that meet each client’s expectations. We are grateful for the trust of our
+            customers and the dedication of our team.”
+          </blockquote>
+          <p className="signature">
+            Engr. Vijaya Kumar <span>General Manager</span>
+          </p>
+        </div>
+      </section>
+      <QuoteBand title="Tell us what you’re planning. We’ll help shape the solution." />
+    </>
+  );
 }
 
 export function ProductsContent() {
   const allProducts = [...grcProducts, ...grpProducts];
-  return <><PageHero eyebrow="Product range" title="Composite products made for function and form." description="Explore architectural GRC and high-performance GRP solutions, developed for domestic and industrial markets." /><section className="section"><div className="container category-grid"><Link href="/grc" className="category-card category-grc"><span>01 / Architecture</span><h2>GRC / GFRC</h2><p>Architectural details, facades, landscape elements and custom forms.</p><b>Explore GRC <span aria-hidden="true">↗</span></b></Link><Link href="/grp" className="category-card category-grp"><span>02 / Engineering</span><h2>GRP / GFRP</h2><p>Corrosion-resistant components, tanks, sheds and industrial systems.</p><b>Explore GRP <span aria-hidden="true">↗</span></b></Link></div></section><section className="section section-grey"><div className="container"><SectionHeading eyebrow="Markets we serve" title="Solutions for everyday life and complex operations." /><div className="market-grid"><article><span>A</span><h3>Domestic consumer market</h3><p>Architectural details, villa enhancements, planters and outdoor products for homes and public spaces.</p></article><article><span>B</span><h3>Industrial market</h3><p>Purpose-built products for civil, marine, chemical, mechanical and transportation applications.</p></article></div></div></section><section className="section"><div className="container"><SectionHeading eyebrow="Selected applications" title="A closer look at our product families." centered /><ProductGallery items={allProducts} filters /></div></section><QuoteBand /></>;
+  return (
+    <>
+      <PageHero
+        eyebrow="Product range"
+        title="Composite products made for function and form."
+        description="Explore architectural GRC and high-performance GRP solutions, developed for domestic and industrial markets."
+      />
+      <section className="section">
+        <div className="container category-grid">
+          <Link href="/grc" className="category-card category-grc">
+            <span>01 / Architecture</span>
+            <h2>GRC / GFRC</h2>
+            <p>Architectural details, facades, landscape elements and custom forms.</p>
+            <b>
+              Explore GRC <span aria-hidden="true">↗</span>
+            </b>
+          </Link>
+          <Link href="/grp" className="category-card category-grp">
+            <span>02 / Engineering</span>
+            <h2>GRP / GFRP</h2>
+            <p>Corrosion-resistant components, tanks, sheds and industrial systems.</p>
+            <b>
+              Explore GRP <span aria-hidden="true">↗</span>
+            </b>
+          </Link>
+        </div>
+      </section>
+      <section className="section section-grey">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Markets we serve"
+            title="Solutions for everyday life and complex operations."
+          />
+          <div className="market-grid">
+            <article>
+              <span>A</span>
+              <h3>Domestic consumer market</h3>
+              <p>
+                Architectural details, villa enhancements, planters and outdoor products for homes
+                and public spaces.
+              </p>
+            </article>
+            <article>
+              <span>B</span>
+              <h3>Industrial market</h3>
+              <p>
+                Purpose-built products for civil, marine, chemical, mechanical and transportation
+                applications.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Selected applications"
+            title="A closer look at our product families."
+            centered
+          />
+          <ProductGallery items={allProducts} filters />
+        </div>
+      </section>
+      <QuoteBand />
+    </>
+  );
 }
 
 export function GrcContent() {
-  const advantages = ['Lightweight and maintenance free', 'Can be moulded into shapes and sizes to suit the design', 'Colour combinations available as required', 'Smooth, textured and stone finishes'];
-  const applications = ['Building facades and decorations', 'Villas', 'Public and private parks', 'Sound barriers', 'Planter pots', 'Partition walls'];
-  return <><ProductPageHero title="Glass Fiber Reinforced Concrete (GFRC / GRC)" description="A composite of white cement, silica sand, water and glass fibre with the necessary admixtures. GRC is used mainly for architectural decoration on buildings and villas, externally and internally, to the consultant’s or architect’s design." /><section className="section"><div className="container product-detail-grid"><div><SectionHeading eyebrow="The material" title="Architectural freedom in a durable concrete composite." /><p>GRC combines the familiar finish of concrete with glass-fibre reinforcement. Elements can be produced to suit project geometry, colour and surface requirements, from understated profiles to distinctive architectural features.</p><h3 className="subheading">Advantages</h3><ul className="check-list">{advantages.map((item) => <li key={item}>{item}</li>)}</ul></div><div className="detail-illustration"><img src="/images/products/grc-placeholder.svg" alt="Illustration of GRC facade panels and decorative architectural profiles" width="760" height="520" loading="lazy" /></div></div></section><section className="section section-grey"><div className="container applications-spec"><div><SectionHeading eyebrow="Applications" title="Made for the built environment." /><ul className="plain-list">{applications.map((item) => <li key={item}>{item}</li>)}</ul></div><aside className="spec-note"><span>Specification</span><h3>Project-led standards</h3><p>Generally manufactured according to British Standards. Other specifications can be considered on client request.</p></aside></div></section><section className="section"><div className="container"><SectionHeading eyebrow="Product gallery" title="GRC forms, finishes and applications." centered /><ProductGallery items={grcProducts} /></div></section><QuoteBand title="Enquire about GRC for your project." /></>;
+  const advantages = [
+    "Lightweight and maintenance free",
+    "Can be moulded into shapes and sizes to suit the design",
+    "Colour combinations available as required",
+    "Smooth, textured and stone finishes",
+  ];
+  const applications = [
+    "Building facades and decorations",
+    "Villas",
+    "Public and private parks",
+    "Sound barriers",
+    "Planter pots",
+    "Partition walls",
+  ];
+  return (
+    <>
+      <ProductPageHero
+        title="Glass Fiber Reinforced Concrete (GFRC / GRC)"
+        description="A composite of white cement, silica sand, water and glass fibre with the necessary admixtures. GRC is used mainly for architectural decoration on buildings and villas, externally and internally, to the consultant’s or architect’s design."
+      />
+      <section className="section">
+        <div className="container product-detail-grid">
+          <div>
+            <SectionHeading
+              eyebrow="The material"
+              title="Architectural freedom in a durable concrete composite."
+            />
+            <p>
+              GRC combines the familiar finish of concrete with glass-fibre reinforcement. Elements
+              can be produced to suit project geometry, colour and surface requirements, from
+              understated profiles to distinctive architectural features.
+            </p>
+            <h3 className="subheading">Advantages</h3>
+            <ul className="check-list">
+              {advantages.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="detail-illustration">
+            <img
+              src="/images/products/grc-placeholder.svg"
+              alt="Illustration of GRC facade panels and decorative architectural profiles"
+              width="760"
+              height="520"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="section section-grey">
+        <div className="container applications-spec">
+          <div>
+            <SectionHeading eyebrow="Applications" title="Made for the built environment." />
+            <ul className="plain-list">
+              {applications.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <aside className="spec-note">
+            <span>Specification</span>
+            <h3>Project-led standards</h3>
+            <p>
+              Generally manufactured according to British Standards. Other specifications can be
+              considered on client request.
+            </p>
+          </aside>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Product gallery"
+            title="GRC forms, finishes and applications."
+            centered
+          />
+          <ProductGallery items={grcProducts} />
+        </div>
+      </section>
+      <QuoteBand title="Enquire about GRC for your project." product="GRC" />
+    </>
+  );
 }
 
 export function GrpContent() {
-  const advantages = ['Formed to the designer’s chosen shape', 'Lightweight construction', 'High tensile strength', 'High chemical resistance', 'Good electrical and sound insulation', 'Resilient under impact', 'Translucency and colour impregnation available'];
-  const applications = ['Civil engineering', 'Mechanical engineering', 'Marine engineering', 'Chemical engineering', 'Electronics', 'Transportation', 'Tanks and sheds'];
-  return <><ProductPageHero title="Glass Fiber Reinforced Plastic (GFRP / GRP)" description="A sophisticated construction material made from polymer resins and glass fibre. Glass-fibre strands and woven roving are impregnated with resin, accelerators and catalyst in appropriate proportions to form a hard, infusible and non-corrosive material." /><section className="section"><div className="container product-detail-grid"><div><SectionHeading eyebrow="The material" title="Strength and resistance, shaped around the application." /><p>GRP enables lightweight products with high tensile strength and strong resistance to corrosion and chemicals. Our team can coordinate shape, colour and material requirements for project-specific components.</p><h3 className="subheading">Advantages</h3><ul className="check-list">{advantages.map((item) => <li key={item}>{item}</li>)}</ul></div><div className="detail-illustration"><img src="/images/products/grp-placeholder.svg" alt="Illustration of GRP tanks, shed and molded composite products" width="760" height="520" loading="lazy" /></div></div></section><section className="section section-grey"><div className="container applications-spec"><div><SectionHeading eyebrow="Applications" title="Composite products across key industries." /><ul className="plain-list">{applications.map((item) => <li key={item}>{item}</li>)}</ul></div><aside className="spec-note"><span>Product support</span><h3>Designed with your team</h3><p>Discuss service conditions, dimensions and finishes with our team to identify a suitable GRP specification.</p></aside></div></section><section className="section"><div className="container"><SectionHeading eyebrow="Product gallery" title="GRP products and engineered forms." centered /><ProductGallery items={grpProducts} /></div></section><QuoteBand title="Enquire about GRP for your project." /></>;
+  const advantages = [
+    "Formed to the designer’s chosen shape",
+    "Lightweight construction",
+    "High tensile strength",
+    "High chemical resistance",
+    "Good electrical and sound insulation",
+    "Resilient under impact",
+    "Translucency and colour impregnation available",
+  ];
+  const applications = [
+    "Civil engineering",
+    "Mechanical engineering",
+    "Marine engineering",
+    "Chemical engineering",
+    "Electronics",
+    "Transportation",
+    "Tanks and sheds",
+  ];
+  return (
+    <>
+      <ProductPageHero
+        title="Glass Fiber Reinforced Plastic (GFRP / GRP)"
+        description="A sophisticated construction material made from polymer resins and glass fibre. Glass-fibre strands and woven roving are impregnated with resin, accelerators and catalyst in appropriate proportions to form a hard, infusible and non-corrosive material."
+      />
+      <section className="section">
+        <div className="container product-detail-grid">
+          <div>
+            <SectionHeading
+              eyebrow="The material"
+              title="Strength and resistance, shaped around the application."
+            />
+            <p>
+              GRP enables lightweight products with high tensile strength and strong resistance to
+              corrosion and chemicals. Our team can coordinate shape, colour and material
+              requirements for project-specific components.
+            </p>
+            <h3 className="subheading">Advantages</h3>
+            <ul className="check-list">
+              {advantages.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="detail-illustration">
+            <img
+              src="/images/products/grp-placeholder.svg"
+              alt="Illustration of GRP tanks, shed and molded composite products"
+              width="760"
+              height="520"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="section section-grey">
+        <div className="container applications-spec">
+          <div>
+            <SectionHeading
+              eyebrow="Applications"
+              title="Composite products across key industries."
+            />
+            <ul className="plain-list">
+              {applications.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <aside className="spec-note">
+            <span>Product support</span>
+            <h3>Designed with your team</h3>
+            <p>
+              Discuss service conditions, dimensions and finishes with our team to identify a
+              suitable GRP specification.
+            </p>
+          </aside>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Product gallery"
+            title="GRP products and engineered forms."
+            centered
+          />
+          <ProductGallery items={grpProducts} />
+        </div>
+      </section>
+      <QuoteBand title="Enquire about GRP for your project." product="GRP" />
+    </>
+  );
 }
 
 export function QualityContent() {
-  const commitments = [['Quality policy', 'We are committed to delivering high-quality and sustainable GFRC, GFRP and precast concrete products. We maintain strict quality checks and continuously improve processes to ensure reliability, durability and responsible production.'], ['Ethical sourcing', 'We work with suppliers who demonstrate environmental responsibility and follow recognized global standards. Our team receives ongoing training in safety and quality.'], ['Sustainability', 'We minimize waste, use environmentally responsible materials and participate in local initiatives that contribute to a cleaner and greener future.'], ['Customer satisfaction', 'We value client feedback, offer warranties that reinforce trust, and support regulatory compliance through routine audits and reviews.']];
-  return <><PageHero eyebrow="Quality & sustainability" title="Responsibility built into the way we work." description="Our quality approach starts with materials and continues through fabrication, installation and long-term customer support." /><section className="section"><div className="container commitment-grid">{commitments.map(([title, description], index) => <article className="commitment-card" key={title}><span>0{index + 1}</span><h2>{title}</h2><p>{description}</p></article>)}</div></section><section className="section section-grey"><div className="container standards-band"><div><p className="eyebrow">Continuous improvement</p><h2>Consistent checks. Better processes. Dependable results.</h2></div><p>We review our work, listen to feedback and strengthen the practices that support safe, durable products and reliable project delivery.</p></div></section><QuoteBand /></>;
+  const commitments = [
+    [
+      "Quality policy",
+      "We are committed to delivering high-quality and sustainable GFRC, GFRP and precast concrete products. We maintain strict quality checks and continuously improve processes to ensure reliability, durability and responsible production.",
+    ],
+    [
+      "Ethical sourcing",
+      "We work with suppliers who demonstrate environmental responsibility and follow recognized global standards. Our team receives ongoing training in safety and quality.",
+    ],
+    [
+      "Sustainability",
+      "We minimize waste, use environmentally responsible materials and participate in local initiatives that contribute to a cleaner and greener future.",
+    ],
+    [
+      "Customer satisfaction",
+      "We value client feedback, offer warranties that reinforce trust, and support regulatory compliance through routine audits and reviews.",
+    ],
+  ];
+  return (
+    <>
+      <PageHero
+        eyebrow="Quality & sustainability"
+        title="Responsibility built into the way we work."
+        description="Our quality approach starts with materials and continues through fabrication, installation and long-term customer support."
+      />
+      <section className="section">
+        <div className="container commitment-grid">
+          {commitments.map(([title, description], index) => (
+            <article className="commitment-card" key={title}>
+              <span>0{index + 1}</span>
+              <h2>{title}</h2>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="section section-grey">
+        <div className="container standards-band">
+          <div>
+            <p className="eyebrow">Continuous improvement</p>
+            <h2>Consistent checks. Better processes. Dependable results.</h2>
+          </div>
+          <p>
+            We review our work, listen to feedback and strengthen the practices that support safe,
+            durable products and reliable project delivery.
+          </p>
+        </div>
+      </section>
+      <QuoteBand />
+    </>
+  );
 }
 
 export function HseContent() {
-  return <><PageHero eyebrow="Health, safety & environment" title="We take pride in everyone returning home safely every day." description="A safe workplace and responsible environmental practice are essential to every project we deliver." /><section className="section"><div className="container hse-content"><div><SectionHeading eyebrow="Our commitment" title="Protecting people and the environment." /><p>Al Sanna is committed to the protection and enhancement of the environment by implementing and maintaining an environmental management system that applies to services provided by its permanent offices and construction activities, including products and services provided by organizations working on its behalf.</p><p>A summary of the HS&amp;E policy is posted on designated safety notice boards. The General Manager has full access to systems for inspection at any time.</p><p>The policy is maintained and developed to reflect the management of specific risks to health, safety and environment arising from the business.</p></div><div className="hse-principles"><h2>On every project</h2><ul className="check-list"><li>Identify and manage task-specific risks</li><li>Keep teams informed and trained</li><li>Maintain safe systems of work</li><li>Reduce environmental impact</li><li>Review performance and improve</li></ul></div></div></section><section className="section section-grey"><div className="container safety-statement"><p className="eyebrow">A shared responsibility</p><blockquote>“This plan describes how we manage health, safety and environment on projects. I expect everyone working on the project to comply with its requirements and maintain the standards it has set.”</blockquote><p className="signature">Eng. Vijaya Kumar <span>General Manager</span></p></div></section><QuoteBand /></>;
+  return (
+    <>
+      <PageHero
+        eyebrow="Health, safety & environment"
+        title="We take pride in everyone returning home safely every day."
+        description="A safe workplace and responsible environmental practice are essential to every project we deliver."
+      />
+      <section className="section">
+        <div className="container hse-content">
+          <div>
+            <SectionHeading
+              eyebrow="Our commitment"
+              title="Protecting people and the environment."
+            />
+            <p>
+              Al Sanna is committed to the protection and enhancement of the environment by
+              implementing and maintaining an environmental management system that applies to
+              services provided by its permanent offices and construction activities, including
+              products and services provided by organizations working on its behalf.
+            </p>
+            <p>
+              A summary of the HS&amp;E policy is posted on designated safety notice boards. The
+              General Manager has full access to systems for inspection at any time.
+            </p>
+            <p>
+              The policy is maintained and developed to reflect the management of specific risks to
+              health, safety and environment arising from the business.
+            </p>
+          </div>
+          <div className="hse-principles">
+            <h2>On every project</h2>
+            <ul className="check-list">
+              <li>Identify and manage task-specific risks</li>
+              <li>Keep teams informed and trained</li>
+              <li>Maintain safe systems of work</li>
+              <li>Reduce environmental impact</li>
+              <li>Review performance and improve</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="section section-grey">
+        <div className="container safety-statement">
+          <p className="eyebrow">A shared responsibility</p>
+          <blockquote>
+            “This plan describes how we manage health, safety and environment on projects. I expect
+            everyone working on the project to comply with its requirements and maintain the
+            standards it has set.”
+          </blockquote>
+          <p className="signature">
+            Eng. Vijaya Kumar <span>General Manager</span>
+          </p>
+        </div>
+      </section>
+      <QuoteBand />
+    </>
+  );
 }
 
 export function TeamContent() {
   const groups = [
-    { title: 'Managing Director', children: [{ title: 'Production Manager', children: [{ title: 'Production Engineer', children: [{ title: 'Supervisor', children: [{ title: 'Moulders · Welders · Laminators · Helpers' }] }] }] }] },
-    { title: 'Managing Director', children: [{ title: 'Sales Manager', children: [{ title: 'Sales Executives' }] }] },
-    { title: 'Managing Director', children: [{ title: 'Accounts Manager', children: [{ title: 'Accounts Assistants', children: [{ title: 'Office Secretary', children: [{ title: 'GRC Workers' }] }] }] }] },
+    {
+      title: "Managing Director",
+      children: [
+        {
+          title: "Production Manager",
+          children: [
+            {
+              title: "Production Engineer",
+              children: [
+                {
+                  title: "Supervisor",
+                  children: [{ title: "Moulders · Welders · Laminators · Helpers" }],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Managing Director",
+      children: [{ title: "Sales Manager", children: [{ title: "Sales Executives" }] }],
+    },
+    {
+      title: "Managing Director",
+      children: [
+        {
+          title: "Accounts Manager",
+          children: [
+            {
+              title: "Accounts Assistants",
+              children: [{ title: "Office Secretary", children: [{ title: "GRC Workers" }] }],
+            },
+          ],
+        },
+      ],
+    },
   ];
-  const workforce = [['Carpenters GRC/GRP', 2], ['GRC Production', 8], ['GRP Production', 6], ['GRC/GRP Fitters (Site)', 8], ['Finishers (GRC/GRP)', 4], ['Helpers (GRC/GRP)', 10]];
-  return <><PageHero eyebrow="Our team" title="Skilled people, coordinated across every stage." description="Our workforce brings together management, engineering, production, sales and site teams." /><section className="section"><div className="container"><SectionHeading eyebrow="Organization" title="One team, connected disciplines." /><div className="org-chart">{groups.map((branch, index) => <div className="org-branch" key={`${branch.children[0].title}-${index}`}><div className="org-node org-director">{branch.title}</div><div className="org-connect" aria-hidden="true"></div><OrgChildren node={branch.children[0]} /></div>)}</div></div></section><section className="section section-grey"><div className="container"><SectionHeading eyebrow="Our workforce" title="A practical mix of skills on the ground." /><div className="table-scroll"><table className="data-table workforce-table"><thead><tr><th scope="col">Team</th><th scope="col">Headcount</th></tr></thead><tbody>{workforce.map(([role, count]) => <tr key={role}><td>{role}</td><td>{count}</td></tr>)}</tbody><tfoot><tr><th scope="row">Total</th><td>38</td></tr></tfoot></table></div></div></section><QuoteBand /></>;
+  const workforce = [
+    ["Carpenters GRC/GRP", 2],
+    ["GRC Production", 8],
+    ["GRP Production", 6],
+    ["GRC/GRP Fitters (Site)", 8],
+    ["Finishers (GRC/GRP)", 4],
+    ["Helpers (GRC/GRP)", 10],
+  ];
+  return (
+    <>
+      <PageHero
+        eyebrow="Our team"
+        title="Skilled people, coordinated across every stage."
+        description="Our workforce brings together management, engineering, production, sales and site teams."
+      />
+      <section className="section">
+        <div className="container">
+          <SectionHeading eyebrow="Organization" title="One team, connected disciplines." />
+          <div className="org-chart">
+            {groups.map((branch, index) => (
+              <div className="org-branch" key={`${branch.children[0].title}-${index}`}>
+                <div className="org-node org-director">{branch.title}</div>
+                <div className="org-connect" aria-hidden="true"></div>
+                <OrgChildren node={branch.children[0]} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section section-grey">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Our workforce"
+            title="A practical mix of skills on the ground."
+          />
+          <div className="table-scroll">
+            <table className="data-table workforce-table">
+              <thead>
+                <tr>
+                  <th scope="col">Team</th>
+                  <th scope="col">Headcount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {workforce.map(([role, count]) => (
+                  <tr key={role}>
+                    <td>{role}</td>
+                    <td>{count}</td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Total</th>
+                  <td>38</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+      <QuoteBand />
+    </>
+  );
 }
 
 function OrgChildren({ node }) {
-  return <div className="org-level"><div className="org-node">{node.title}</div>{node.children?.map((child) => <div className="org-sublevel" key={child.title}><span className="org-connect" aria-hidden="true"></span><div className="org-node">{child.title}</div>{child.children?.map((leaf) => <div className="org-sublevel" key={leaf.title}><span className="org-connect" aria-hidden="true"></span><div className="org-node org-leaf">{leaf.title}</div>{leaf.children?.map((last) => <div className="org-sublevel" key={last.title}><span className="org-connect" aria-hidden="true"></span><div className="org-node org-leaf">{last.title}</div></div>)}</div>)}</div>)}</div>;
+  return (
+    <div className="org-level">
+      <div className="org-node">{node.title}</div>
+      {node.children?.map((child) => (
+        <div className="org-sublevel" key={child.title}>
+          <span className="org-connect" aria-hidden="true"></span>
+          <div className="org-node">{child.title}</div>
+          {child.children?.map((leaf) => (
+            <div className="org-sublevel" key={leaf.title}>
+              <span className="org-connect" aria-hidden="true"></span>
+              <div className="org-node org-leaf">{leaf.title}</div>
+              {leaf.children?.map((last) => (
+                <div className="org-sublevel" key={last.title}>
+                  <span className="org-connect" aria-hidden="true"></span>
+                  <div className="org-node org-leaf">{last.title}</div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 const equipment = [
-  ['GRC Spray machine', 'Nos.', '1'], ['High Shear Mixture machine', 'Nos.', '1'], ['Compressor 20 HP', 'Nos.', '1'], ['Wood Cutter (Table Saw)', 'Nos.', '1'], ['Wood planer machine', 'Nos.', '1'], ['Hand Cutter (Jig Saw)', 'Nos.', '7'], ['Weighing scale for precision', 'Nos.', '1'], ['Weighing machine (1000 Kg)', 'Nos.', '1'], ['Hand mixing drill (GRC)', 'Nos.', '2'], ['Hand mixing drill (Gel coat)', 'Nos.', '2'], ['Grinder machine (Big)', 'Nos.', '4'], ['Pedestal drilling machine', 'Nos.', '1'], ['Grinder machine (Small)', 'Nos.', '12'], ['Hilti Drill machine', 'Nos.', '4'], ['Screw tighter machine', 'Nos.', '3'], ['Bolt tighter machine', 'Nos.', '6'], ['Welding machine', 'Nos.', '1'], ['Buffing machine', 'Nos.', '1'], ['Spray painting machine', 'Nos.', '1'], ['Blower machine', 'Nos.', '1'], ['Exhaust fan', 'Nos.', '4'], ['Generator', 'Nos.', '3'], ['Tray board', 'Nos.', '1'], ['Chain Pulley 2.0 Ton', 'Nos.', '1'], ['Chain Pulley 1.50 Ton', 'Nos.', '2'], ['Hoist machine 1.0 Ton', 'Nos.', '1'], ['Forklift', 'Nos.', '1'], ['Miscellaneous carpentry tools', 'Lump sum', '1'], ['Miscellaneous materials incl. coverall & safety shoes/PPE kit', 'Lump sum', '1'],
+  ["GRC Spray machine", "Nos.", "1"],
+  ["High Shear Mixture machine", "Nos.", "1"],
+  ["Compressor 20 HP", "Nos.", "1"],
+  ["Wood Cutter (Table Saw)", "Nos.", "1"],
+  ["Wood planer machine", "Nos.", "1"],
+  ["Hand Cutter (Jig Saw)", "Nos.", "7"],
+  ["Weighing scale for precision", "Nos.", "1"],
+  ["Weighing machine (1000 Kg)", "Nos.", "1"],
+  ["Hand mixing drill (GRC)", "Nos.", "2"],
+  ["Hand mixing drill (Gel coat)", "Nos.", "2"],
+  ["Grinder machine (Big)", "Nos.", "4"],
+  ["Pedestal drilling machine", "Nos.", "1"],
+  ["Grinder machine (Small)", "Nos.", "12"],
+  ["Hilti Drill machine", "Nos.", "4"],
+  ["Screw tighter machine", "Nos.", "3"],
+  ["Bolt tighter machine", "Nos.", "6"],
+  ["Welding machine", "Nos.", "1"],
+  ["Buffing machine", "Nos.", "1"],
+  ["Spray painting machine", "Nos.", "1"],
+  ["Blower machine", "Nos.", "1"],
+  ["Exhaust fan", "Nos.", "4"],
+  ["Generator", "Nos.", "3"],
+  ["Tray board", "Nos.", "1"],
+  ["Chain Pulley 2.0 Ton", "Nos.", "1"],
+  ["Chain Pulley 1.50 Ton", "Nos.", "2"],
+  ["Hoist machine 1.0 Ton", "Nos.", "1"],
+  ["Forklift", "Nos.", "1"],
+  ["Miscellaneous carpentry tools", "Lump sum", "1"],
+  ["Miscellaneous materials incl. coverall & safety shoes/PPE kit", "Lump sum", "1"],
 ].map(([description, unit, quantity]) => ({ description, unit, quantity }));
 
 export function FacilitiesContent() {
-  return <><PageHero eyebrow="Facilities & equipment" title="Machinery and Tools for GRC & GRP Works" description="Our workshop equipment supports fabrication, finishing, handling and site-readiness across GRC and GRP work." /><section className="section"><div className="container"><SectionHeading eyebrow="Workshop inventory" title="Equipment at a glance." /><FacilitySearchTable equipment={equipment} /></div></section><QuoteBand title="Need a fabrication or installation partner?" /></>;
+  return (
+    <>
+      <PageHero
+        eyebrow="Facilities & equipment"
+        title="Machinery and Tools for GRC & GRP Works"
+        description="Our workshop equipment supports fabrication, finishing, handling and site-readiness across GRC and GRP work."
+      />
+      <section className="section">
+        <div className="container">
+          <SectionHeading eyebrow="Workshop inventory" title="Equipment at a glance." />
+          <FacilitySearchTable equipment={equipment} />
+        </div>
+      </section>
+      <QuoteBand title="Need a fabrication or installation partner?" />
+    </>
+  );
 }
 
 export function ContactContent() {
-  return <><PageHero eyebrow="Contact Al Sanna" title="Tell us about your next project." description="Share your scope, product interest and timing. Our team is based in Sharjah and works across the UAE and beyond." /><section className="section"><div className="container contact-layout"><div className="contact-form-panel"><p className="eyebrow">Project enquiry</p><h2>Request a quote</h2><p className="section-intro">Complete the form and your email application will prepare an enquiry for our team.</p><ContactForm /></div><aside className="contact-aside"><div className="contact-detail"><span>Visit</span><strong>Sharjah, U.A.E.</strong><p>P.O. Box 48072</p></div><div className="contact-detail"><span>Write</span><a href="mailto:alsannatank@gmail.com">alsannatank@gmail.com</a></div><div className="contact-detail"><span>Call</span><a href="tel:+97165104783">06-5104783</a><a href="tel:+971556441028">055 6441028</a><a href="tel:+971505854789">050-5854789</a></div><div className="map-frame"><iframe title="Map showing Sharjah, United Arab Emirates" src="https://maps.google.com/maps?q=Sharjah%2C%20United%20Arab%20Emirates&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div></aside></div></section></>;
+  return (
+    <>
+      <PageHero
+        eyebrow="Contact Al Sanna"
+        title="Tell us about your next project."
+        description="Share your scope, product interest and timing. Our team is based in Sharjah and works across the UAE and beyond."
+      />
+      <section className="section">
+        <div className="container contact-layout">
+          <div className="contact-form-panel">
+            <p className="eyebrow">Project enquiry</p>
+            <h2>Request a quote</h2>
+            <p className="section-intro">
+              Complete the form and your email application will prepare an enquiry for our team.
+            </p>
+            <ContactForm />
+          </div>
+          <aside className="contact-aside">
+            <div className="contact-detail">
+              <span>Visit</span>
+              <strong>Sharjah, U.A.E.</strong>
+              <p>P.O. Box 48072</p>
+            </div>
+            <div className="contact-detail">
+              <span>Write</span>
+              <a href="mailto:alsannatank@gmail.com">alsannatank@gmail.com</a>
+            </div>
+            <div className="contact-detail">
+              <span>Call</span>
+              <a href="tel:+97165104783">06-5104783</a>
+              <a href="tel:+971556441028">055 6441028</a>
+              <a href="tel:+971505854789">050-5854789</a>
+            </div>
+            <div className="map-frame">
+              <iframe
+                title="Map showing Sharjah, United Arab Emirates"
+                src="https://maps.google.com/maps?q=Sharjah%2C%20United%20Arab%20Emirates&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </aside>
+        </div>
+      </section>
+    </>
+  );
 }

@@ -3,8 +3,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "node .next/standalone/server.js"
+    "build": "next build && node scripts/copy-standalone-assets.js",
+    "start": "node .next/standalone/server.js",
+    "format": "prettier --write \"**/*.{html,css,js,jsx,mjs,json,md}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,jsx,mjs,json,md}\"",
+    "validate:html": "html-validate \"*.html\""
+  },
+  "devDependencies": {
+    "html-validate": "^11.18.0",
+    "prettier": "^3.6.2"
   },
   "dependencies": {
     "next": "14.2.15",

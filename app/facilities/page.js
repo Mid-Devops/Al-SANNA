@@ -1,12 +1,21 @@
-import SiteHeader from '../../components/SiteHeader';
-import SiteFooter from '../../components/SiteFooter';
-import { FacilitiesContent } from '../../components/CompanyPages';
+import SiteHeader from "../../components/SiteHeader";
+import SiteFooter from "../../components/SiteFooter";
+import { FacilitiesContent } from "../../components/CompanyPages";
+import { createPageMetadata } from "../metadata";
 
-export const metadata = {
-  title: 'Facilities & Equipment | Al Sanna',
-  description: 'Machinery and workshop tools supporting Al Sanna GRC and GRP manufacturing.',
-};
+export const metadata = createPageMetadata(
+  "Facilities & Equipment | Al Sanna",
+  "Machinery and workshop tools supporting Al Sanna GRC and GRP manufacturing.",
+);
 
 export default function FacilitiesPage() {
-  return <><SiteHeader /><main><FacilitiesContent /></main><SiteFooter /></>;
+  return (
+    <>
+      <SiteHeader />
+      <main>
+        <FacilitiesContent />
+      </main>
+      <SiteFooter />
+    </>
+  );
 }
