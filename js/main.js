@@ -56,12 +56,14 @@ function renderFooter() {
             <li><a href="about.html">About</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="product-details.html">Product Details</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
           </ul>
         </div>
         <div>
           <h3>Company</h3>
           <ul class="footer-list">
             <li>Sharjah, UAE</li>
+            <li>P.O. Box 48072</li>
             <li><a href="tel:+97165104783">06-5104783</a></li>
             <li><a href="tel:+971556441028">0556441028</a></li>
             <li><a href="tel:+971505854789">050-5854789</a></li>
@@ -74,7 +76,8 @@ function renderFooter() {
         </div>
       </div>
       <div class="container footer-bottom">
-        <p>© <span id="year"></span> AlSanna Fiber Glass Manufacturing LLC. All rights reserved.</p>
+        <p lang="ar" dir="rtl">شركة السنا لخزانات ومستودعات الصناعات ذ.م.م</p>
+        <p>© <span id="year"></span> Al Sanna Tank &amp; Sheds Ind LLC. All rights reserved.</p>
       </div>
     </footer>
     <a class="whatsapp-link" href="https://wa.me/971556441028" target="_blank" rel="noopener noreferrer" aria-label="Chat with Al Sanna on WhatsApp">WhatsApp</a>
@@ -222,6 +225,8 @@ function initializeContactForm() {
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector(".form-status");
   if (!button || !status) return;
+  const startedAt = performance.now();
+  let submitting = false;
 
   form.addEventListener(
     "invalid",
@@ -237,31 +242,63 @@ function initializeContactForm() {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (button.disabled) return;
+    if (submitting) return;
     if (!form.reportValidity()) {
       status.textContent = "Please correct the highlighted fields before sending your enquiry.";
       return;
     }
 
     const data = new FormData(form);
-    const subject = encodeURIComponent(`Website enquiry: ${data.get("interest")}`);
-    const body = encodeURIComponent(
-      [
-        `Name: ${data.get("name")}`,
-        `Email: ${data.get("email")}`,
-        `Phone: ${data.get("phone")}`,
-        `Company: ${data.get("company")}`,
-        `Product interest: ${data.get("interest")}`,
-        "",
-        data.get("message"),
-      ].join("\n"),
-    );
+    const clean = (name) =>
+      String(data.get(name) || "")
+        .normalize("NFC")
+        .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, "")
+        .trim();
 
+    submitting = true;
     button.disabled = true;
-    button.textContent = "Opening email…";
-    status.textContent =
-      "Your email app is opening with the enquiry details. Send the draft to complete your enquiry.";
-    window.location.href = `mailto:alsannatank@gmail.com?subject=${subject}&body=${body}`;
+    button.textContent = "Sending enquiry…";
+    status.textContent = "Sending your enquiry securely…";
+    fetch("/api/contact/csrf", { credentials: "same-origin", cache: "no-store" })
+      .then((csrfResponse) => {
+        if (!csrfResponse.ok) throw new Error("Could not start a secure enquiry session.");
+        return csrfResponse.json();
+      })
+      .then(({ csrfToken }) =>
+        fetch("/api/contact", {
+          method: "POST",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": csrfToken,
+          },
+          body: JSON.stringify({
+            name: clean("name"),
+            email: clean("email"),
+            phone: clean("phone"),
+            company: clean("company"),
+            interest: clean("interest"),
+            message: clean("message"),
+            website: clean("website"),
+            elapsedMs: performance.now() - startedAt,
+          }),
+        }),
+      )
+      .then(async (response) => {
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || "Your enquiry could not be sent.");
+        status.textContent = "Thank you. Your enquiry has been sent to our team.";
+        form.reset();
+      })
+      .catch((error) => {
+        status.textContent =
+          error instanceof Error ? error.message : "Your enquiry could not be sent.";
+      })
+      .finally(() => {
+        submitting = false;
+        button.disabled = false;
+        button.textContent = "Send Enquiry";
+      });
   });
 }
 

@@ -13,7 +13,7 @@
       property="og:description"
       content="Contact Al Sanna in Sharjah, UAE for GRC, GRP, tank and shed project enquiries or a manufacturing quote."
     />
-    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:image" content="https://alsannauae.com/images/logo.png" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Contact Al Sanna | Request a Project Quote" />
@@ -23,6 +23,7 @@
     />
     <meta name="twitter:image" content="/images/logo.png" />
     <title>Contact Al Sanna | Request a Project Quote</title>
+    <link rel="canonical" href="https://alsannauae.com/contact.html" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
@@ -30,6 +31,10 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -47,13 +52,25 @@
         <div class="container contact-layout">
           <div class="contact-card">
             <h2>Request a quote</h2>
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" method="post" action="/api/contact">
+              <div class="honeypot" aria-hidden="true">
+                <label for="contact-website">Leave this field empty</label>
+                <input
+                  id="contact-website"
+                  type="text"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
               <div class="input-row">
                 <input
                   type="text"
                   name="name"
                   placeholder="Your Name"
                   aria-label="Your name"
+                  autocomplete="name"
+                  maxlength="120"
                   required
                 />
               </div>
@@ -63,6 +80,8 @@
                   name="email"
                   placeholder="Email Address"
                   aria-label="Email address"
+                  autocomplete="email"
+                  maxlength="254"
                   required
                 />
               </div>
@@ -72,6 +91,8 @@
                   name="phone"
                   placeholder="Phone Number"
                   aria-label="Phone number"
+                  autocomplete="tel"
+                  maxlength="24"
                   pattern="\x2B?[0-9](?:[0-9]| |-){7,18}[0-9]"
                   title="Enter a valid phone number, including country code if needed."
                   required
@@ -83,10 +104,12 @@
                   name="company"
                   placeholder="Company Name"
                   aria-label="Company name"
+                  autocomplete="organization"
+                  maxlength="160"
                 />
               </div>
               <div class="input-row">
-                <select name="interest" aria-label="Product interest" required>
+                <select name="interest" aria-label="Product interest" autocomplete="off" required>
                   <option value="" selected disabled>Select a product</option>
                   <option>GRC</option>
                   <option>GRP</option>
@@ -101,6 +124,8 @@
                   rows="5"
                   placeholder="Tell us about your project or product requirement"
                   aria-label="Project details"
+                  autocomplete="off"
+                  maxlength="5000"
                   required
                 ></textarea>
               </div>
@@ -112,9 +137,9 @@
           <div class="contact-info">
             <div class="info-card">
               <p class="eyebrow accent">Reach Us</p>
-              <h3>AlSanna Fiber Glass Manufacturing LLC</h3>
+              <h3>Al Sanna Tank &amp; Sheds Ind LLC</h3>
               <ul class="detail-list">
-                <li>Sharjah, United Arab Emirates</li>
+                <li>Sharjah, United Arab Emirates; P.O. Box 48072</li>
                 <li><a href="tel:+97165104783">06&#8209;5104783</a></li>
                 <li><a href="tel:+971556441028">0556441028</a></li>
                 <li><a href="tel:+971505854789">050&#8209;5854789</a></li>

@@ -49,6 +49,9 @@ export default function SiteFooter() {
               <li>
                 <Link href="/contact">Contact</Link>
               </li>
+              <li>
+                <Link href="/privacy">Privacy policy</Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -60,6 +63,9 @@ export default function SiteFooter() {
               <br />
               <a href="mailto:alsannatank@gmail.com">alsannatank@gmail.com</a>
             </address>
+            <p className="footer-arabic" lang="ar" dir="rtl">
+              شركة السنا لخزانات ومستودعات الصناعات ذ.م.م
+            </p>
             <ul className="footer-links phone-list">
               {phoneLinks.map((phone) => (
                 <li key={phone.href}>
@@ -71,9 +77,11 @@ export default function SiteFooter() {
         </div>
         <div className="footer-bottom">
           <div className="container footer-bottom-inner">
-            <span>© 2026 Al Sanna Tank &amp; Sheds Ind LLC. All rights reserved.</span>
+            <span>
+              © {new Date().getFullYear()} Al Sanna Tank &amp; Sheds Ind LLC. All rights reserved.
+            </span>
             <span className="footer-tagline">
-              Fiber Glass Manufacturing, GRC, GRP, GRE &amp; GRG Division
+              Fiberglass manufacturing, GRC, GRP, GRE &amp; GRG division
             </span>
           </div>
         </div>

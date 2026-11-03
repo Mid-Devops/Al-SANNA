@@ -6,6 +6,7 @@ import { createPageMetadata } from "../metadata";
 export const metadata = createPageMetadata(
   "GRC / GFRC Products | Al Sanna",
   "Architectural Glass Fiber Reinforced Concrete facades, decorations, planters and custom GRC products.",
+  "/grc",
 );
 
 export default function GrcPage() {

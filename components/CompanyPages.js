@@ -302,7 +302,7 @@ export function AboutContent() {
       <PageHero
         eyebrow="About Al Sanna"
         title="A UAE manufacturer built on experience and craftsmanship."
-        description="Founded in 2006, Al Sanna Tanks & Sheds Industries L.L.C. has established itself as a leading innovator in the UAE, specializing in Glass Fiber Reinforced Concrete (GFRC) and Glass Fiber Reinforced Plastic (GFRP)."
+        description="Founded in 2006, Al Sanna Tank & Sheds Ind LLC is a UAE manufacturer specializing in Glass Fiber Reinforced Concrete (GFRC) and Glass Fiber Reinforced Plastic (GFRP)."
       />
       <section className="section">
         <div className="container prose-layout">
@@ -937,7 +937,8 @@ export function ContactContent() {
             <p className="eyebrow">Project enquiry</p>
             <h2>Request a quote</h2>
             <p className="section-intro">
-              Complete the form and your email application will prepare an enquiry for our team.
+              Your details are validated in your browser and again on our server. We use them only
+              to respond to this project enquiry.
             </p>
             <ContactForm />
           </div>
@@ -945,7 +946,7 @@ export function ContactContent() {
             <div className="contact-detail">
               <span>Visit</span>
               <strong>Sharjah, U.A.E.</strong>
-              <p>P.O. Box 48072</p>
+              <p>United Arab Emirates; P.O. Box 48072</p>
             </div>
             <div className="contact-detail">
               <span>Write</span>
@@ -962,7 +963,7 @@ export function ContactContent() {
                 title="Map showing Sharjah, United Arab Emirates"
                 src="https://maps.google.com/maps?q=Sharjah%2C%20United%20Arab%20Emirates&t=&z=12&ie=UTF8&iwloc=&output=embed"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
               />
             </div>
           </aside>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" role="img" aria-labelledby="title">
+  <title id="title">Illustration of fiberglass manufacturing and storage concepts</title>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#e6eefa" />
+      <stop offset="1" stop-color="#ffffff" />
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#b8c5d5" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect x="50" y="40" width="800" height="610" rx="24" fill="url(#sky)" />
+  <path d="M50 500 425 170l425 330v150H50Z" fill="#d4dde7" />
+  <path d="m140 490 285-250 340 250v160H140Z" fill="#ffffff" />
+  <path d="M165 500 425 278l290 222v145H165Z" fill="url(#grid)" />
+  <path d="M480 500h170v145H480z" fill="#aebdce" />
+  <path d="M195 418h115v82H195zM630 418h70v82h-70z" fill="#004AAD" opacity=".8" />
+  <path d="M465 500h190v135H465z" fill="none" stroke="#004AAD" stroke-width="5" />
+  <path d="M465 545h190M525 500v135M590 500v135" stroke="#004AAD" stroke-width="3" opacity=".6" />
+  <g transform="translate(665 260)">
+    <ellipse cx="70" cy="20" rx="58" ry="20" fill="#5684bd" />
+    <path d="M12 20v180c0 12 26 22 58 22s58-10 58-22V20" fill="#b7d2f1" stroke="#004AAD" stroke-width="4" />
+    <ellipse cx="70" cy="200" rx="58" ry="20" fill="#8eb4e2" stroke="#004AAD" stroke-width="4" />
+    <path d="M12 80c26 15 90 15 116 0M12 138c26 15 90 15 116 0" fill="none" stroke="#004AAD" stroke-width="3" opacity=".65" />
+    <path d="M45 5v-22h50V5" fill="none" stroke="#3A3A3A" stroke-width="5" />
+  </g>
+  <path d="M40 655h820" stroke="#3A3A3A" stroke-width="5" />
+  <path d="m50 40 85 0-85 85M850 650l-85 0 85-85" fill="#004AAD" />
+</svg>

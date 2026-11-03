@@ -13,14 +13,44 @@ export default function SiteHeader() {
 
   useEffect(() => {
     const targets = document.querySelectorAll(
-      ".section-heading, .service-card, .application-item, .value-card, .gallery-item, .commitment-card, .org-branch, .market-grid article",
+      ".section-heading, .service-card, .application-item, .value-card, .gallery-item, .commitment-card, .org-branch, .market-grid article, .stats-strip .stat",
     );
     targets.forEach((target) => target.classList.add("motion-reveal"));
+    const revealImmediately = () => {
+      targets.forEach((target) => target.classList.add("motion-reveal--visible"));
+    };
+
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      revealImmediately();
+      return undefined;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("motion-reveal--visible");
+            if (entry.target.matches(".stats-strip .stat")) {
+              const counter = entry.target.querySelector("strong");
+              const match = counter?.textContent.trim().match(/^(\d+)(.*)$/);
+              if (counter && match) {
+                const targetValue = Number(match[1]);
+                const suffix = match[2];
+                const startTime = performance.now();
+                const duration = 1000;
+
+                function countUp(now) {
+                  const progress = Math.min((now - startTime) / duration, 1);
+                  counter.textContent = `${Math.round(targetValue * progress)}${suffix}`;
+                  if (progress < 1) window.requestAnimationFrame(countUp);
+                }
+
+                window.requestAnimationFrame(countUp);
+              }
+            }
             observer.unobserve(entry.target);
           }
         });

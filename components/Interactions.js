@@ -200,39 +200,70 @@ export function ContactForm() {
   const [status, setStatus] = useState("");
   const [interest, setInterest] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const startedAtRef = useRef(Date.now());
+  const inFlightRef = useRef(false);
 
   useEffect(() => {
     const product = new URLSearchParams(window.location.search).get("product");
     if (product) setInterest(product);
   }, []);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const form = event.currentTarget;
-    if (submitting) return;
+    if (inFlightRef.current) return;
     if (!form.reportValidity()) {
       setStatus("Please correct the highlighted fields before sending your enquiry.");
       return;
     }
 
     const data = new FormData(form);
-    const subject = encodeURIComponent(`Website enquiry: ${data.get("interest")}`);
-    const body = encodeURIComponent(
-      [
-        `Name: ${data.get("name")}`,
-        `Company: ${data.get("company")}`,
-        `Email: ${data.get("email")}`,
-        `Phone: ${data.get("phone")}`,
-        `Product interest: ${data.get("interest")}`,
-        "",
-        data.get("message"),
-      ].join("\n"),
-    );
+    const clean = (value) =>
+      String(value ?? "")
+        .normalize("NFC")
+        .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, "")
+        .trim();
+
     setSubmitting(true);
-    setStatus(
-      "Your email app is opening with the enquiry details. Send the draft to complete your enquiry.",
-    );
-    window.location.href = `mailto:alsannatank@gmail.com?subject=${subject}&body=${body}`;
+    inFlightRef.current = true;
+    setStatus("Sending your enquiry securely…");
+    try {
+      const csrfResponse = await fetch("/api/contact/csrf", {
+        credentials: "same-origin",
+        cache: "no-store",
+      });
+      if (!csrfResponse.ok) throw new Error("Could not start a secure enquiry session.");
+      const { csrfToken } = await csrfResponse.json();
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken,
+        },
+        body: JSON.stringify({
+          name: clean(data.get("name")),
+          company: clean(data.get("company")),
+          email: clean(data.get("email")),
+          phone: clean(data.get("phone")),
+          interest: clean(data.get("interest")),
+          message: clean(data.get("message")),
+          website: clean(data.get("website")),
+          elapsedMs: Date.now() - startedAtRef.current,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Your enquiry could not be sent.");
+      setStatus("Thank you. Your enquiry has been sent to our team.");
+      form.reset();
+      setInterest("");
+      startedAtRef.current = Date.now();
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "Your enquiry could not be sent.");
+    } finally {
+      setSubmitting(false);
+      inFlightRef.current = false;
+    }
   }
 
   return (
@@ -243,18 +274,22 @@ export function ContactForm() {
         setStatus("Please complete each required field and check the highlighted value.")
       }
     >
+      <div className="honeypot" aria-hidden="true">
+        <label htmlFor="contact-website">Leave this field empty</label>
+        <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       <div className="form-grid">
         <label>
           Name
-          <input name="name" autoComplete="name" required />
+          <input name="name" autoComplete="name" maxLength={120} required />
         </label>
         <label>
           Company
-          <input name="company" autoComplete="organization" required />
+          <input name="company" autoComplete="organization" maxLength={160} />
         </label>
         <label>
           Email
-          <input name="email" type="email" autoComplete="email" required />
+          <input name="email" type="email" autoComplete="email" maxLength={254} required />
         </label>
         <label>
           Phone
@@ -262,6 +297,7 @@ export function ContactForm() {
             name="phone"
             type="tel"
             autoComplete="tel"
+            maxLength={24}
             pattern={"\\x2B?[0-9](?:[0-9]| |-){7,18}[0-9]"}
             title="Enter a valid phone number, including country code if needed."
             required
@@ -273,6 +309,7 @@ export function ContactForm() {
             name="interest"
             value={interest}
             onChange={(event) => setInterest(event.target.value)}
+            autoComplete="off"
             required
           >
             {interest && !["GRC", "GRP", "Tanks", "Sheds", "Other"].includes(interest) && (
@@ -290,7 +327,7 @@ export function ContactForm() {
         </label>
         <label className="form-wide">
           Message
-          <textarea name="message" rows="5" required />
+          <textarea name="message" rows="5" autoComplete="off" maxLength={5000} required />
         </label>
       </div>
       <button className="button button--blue" type="submit" disabled={submitting}>

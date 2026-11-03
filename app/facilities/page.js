@@ -6,6 +6,7 @@ import { createPageMetadata } from "../metadata";
 export const metadata = createPageMetadata(
   "Facilities & Equipment | Al Sanna",
   "Machinery and workshop tools supporting Al Sanna GRC and GRP manufacturing.",
+  "/facilities",
 );
 
 export default function FacilitiesPage() {

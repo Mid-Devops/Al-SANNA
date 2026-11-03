@@ -6,6 +6,7 @@ import { createPageMetadata } from "../metadata";
 export const metadata = createPageMetadata(
   "Products | GRC and GRP Manufacturing",
   "Explore Al Sanna GRC/GFRC architectural products and GRP/GFRP engineering solutions.",
+  "/products",
 );
 
 export default function ProductsPage() {

@@ -6,6 +6,7 @@ import { createPageMetadata } from "./metadata";
 export const metadata = createPageMetadata(
   "Al Sanna Tank & Sheds Ind LLC | GRC & GRP Solutions",
   "Design, detailing, fabrication and installation of GRC and GRP products across the UAE and beyond.",
+  "/",
 );
 
 export default function HomePage() {

@@ -6,6 +6,7 @@ import { createPageMetadata } from "../metadata";
 export const metadata = createPageMetadata(
   "Health, Safety & Environment | Al Sanna",
   "Al Sanna health, safety and environmental commitments for office and project work.",
+  "/hse",
 );
 
 export default function HsePage() {

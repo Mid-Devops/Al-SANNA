@@ -6,6 +6,7 @@ import { createPageMetadata } from "../metadata";
 export const metadata = createPageMetadata(
   "Our Team | Al Sanna Tank & Sheds Ind LLC",
   "Meet the production, sales and accounts teams supporting Al Sanna projects.",
+  "/team",
 );
 
 export default function TeamPage() {

@@ -6,6 +6,7 @@ import { createPageMetadata } from "../metadata";
 export const metadata = createPageMetadata(
   "GRP / GFRP Products | Al Sanna",
   "Corrosion-resistant Glass Fiber Reinforced Plastic tanks, sheds and custom industrial products.",
+  "/grp",
 );
 
 export default function GrpPage() {
