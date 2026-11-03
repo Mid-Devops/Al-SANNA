@@ -13,6 +13,18 @@ const standalonePages = [
   "privacy.html",
 ];
 
+// Ensure local public folder is synchronized
+mkdirSync("public", { recursive: true });
+mkdirSync("public/css", { recursive: true });
+mkdirSync("public/js", { recursive: true });
+mkdirSync("public/images", { recursive: true });
+cpSync("css", "public/css", { recursive: true, force: true });
+cpSync("js", "public/js", { recursive: true, force: true });
+cpSync("images", "public/images", { recursive: true, force: true });
+for (const page of standalonePages) {
+  cpSync(page, join("public", page), { force: true });
+}
+
 mkdirSync(join(standalonePath, ".next"), { recursive: true });
 mkdirSync(publicPath, { recursive: true });
 cpSync("public", publicPath, { recursive: true, force: true });

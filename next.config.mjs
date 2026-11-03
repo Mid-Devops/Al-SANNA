@@ -16,6 +16,18 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        { source: "/", destination: "/index.html" },
+        { source: "/about", destination: "/about.html" },
+        { source: "/products", destination: "/products.html" },
+        { source: "/product-details", destination: "/product-details.html" },
+        { source: "/contact", destination: "/contact.html" },
+        { source: "/privacy", destination: "/privacy.html" },
+      ],
+    };
+  },
 };
 
 export default nextConfig;

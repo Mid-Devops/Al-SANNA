@@ -4,7 +4,13 @@
   --blue-dark: #003580;
   --blue-light: #e6eefa;
   --charcoal: #3a3a3a;
-  --bg: #f8f9fc;
+  --cyan: #00c2ff;
+  --violet: #7b5cff;
+  --teal: #00d4b4;
+  --orange: #ff8a3d;
+  --pink: #ff5c8a;
+  --bg-soft: #f4f7ff;
+  --bg: #f4f7ff;
   --section-bg: #f4f6f9;
   --ink: #3a3a3a;
   --muted: #565f69;
@@ -15,6 +21,15 @@
   --content: 1180px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   --shadow-hover: 0 8px 24px rgba(0, 74, 173, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.68);
+  --glass-border: rgba(255, 255, 255, 0.65);
+  --glass-shadow: 0 8px 32px rgba(0, 74, 173, 0.12);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  --grad-main: linear-gradient(135deg, #004aad, #00c2ff);
+  --grad-secondary: linear-gradient(135deg, #7b5cff, #ff5c8a);
+  --grad-teal-cyan: linear-gradient(135deg, #00d4b4, #00c2ff);
+  --grad-orange-pink: linear-gradient(135deg, #ff8a3d, #ff5c8a);
+  --grad-whatsapp: linear-gradient(135deg, #25d366, #128c7e);
 }
 
 /* Global styles */

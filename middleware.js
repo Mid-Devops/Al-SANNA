@@ -7,12 +7,18 @@ function createNonce() {
 
 export function middleware(request) {
   const nonce = createNonce();
-  const isStandaloneHtml = request.nextUrl.pathname.endsWith(".html");
+  const pathname = request.nextUrl.pathname;
+  const isStandaloneHtml =
+    pathname === "/" ||
+    pathname.endsWith(".html") ||
+    ["/about", "/products", "/product-details", "/contact", "/privacy"].includes(pathname);
   const contentSecurityPolicy = [
     "default-src 'self'",
-    isStandaloneHtml ? "script-src 'self'" : `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`,
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-    "font-src 'self' https://fonts.gstatic.com data:",
+    isStandaloneHtml
+      ? "script-src 'self' https://cdnjs.cloudflare.com"
+      : `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`,
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
+    "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:",
     "img-src 'self' data: blob:",
     "connect-src 'self'",
     "frame-src https://maps.google.com https://www.google.com https://maps.google.ae https://www.google.ae",
