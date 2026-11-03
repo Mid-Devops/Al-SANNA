@@ -35,9 +35,24 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Background Floating Gradient Blobs -->
+    <div class="bg-blobs" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="blob blob-4"></div>
+    </div>
+
     <div data-site-header></div>
 
     <main>
@@ -48,9 +63,10 @@
         </div>
       </section>
 
+      <!-- Split Overview -->
       <section class="section">
         <div class="container split-grid">
-          <div>
+          <div class="reveal">
             <p class="eyebrow accent">Our Company</p>
             <h2>Delivering fiberglass solutions that perform under pressure.</h2>
             <p>
@@ -63,8 +79,14 @@
               quality control to manufacture products that are durable, lightweight,
               corrosion-resistant, and suitable for demanding operational environments.
             </p>
+            <div class="mt-24">
+              <a href="contact.html" class="btn btn--primary">
+                <span>Contact Our Engineers</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
-          <div class="image-panel">
+          <div class="image-panel glass reveal">
             <img
               src="images/industrial-concepts.svg"
               alt="Illustration of fiberglass manufacturing and storage concepts"
@@ -77,28 +99,75 @@
         </div>
       </section>
 
+      <!-- Our Values with Colorful Icon Badges -->
       <section class="section muted-section">
         <div class="container">
-          <div class="section-heading center">
+          <div class="section-heading center reveal">
             <p class="eyebrow accent">Our Values</p>
             <h2>What drives every product we manufacture.</h2>
           </div>
           <div class="features-grid three-col">
-            <article class="feature">
+            <article class="feature glass tilt-card reveal">
+              <div class="icon-badge icon-badge--cyan icon-badge--mb">
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
               <h3>Reliability</h3>
               <p>
                 We design products and systems that meet rigorous operational demands with
                 consistent performance.
               </p>
             </article>
-            <article class="feature">
+            <article class="feature glass tilt-card reveal">
+              <div class="icon-badge icon-badge--violet icon-badge--mb">
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+              </div>
               <h3>Innovation</h3>
               <p>
                 We keep improving our manufacturing methods to deliver efficient, future-focused
                 solutions.
               </p>
             </article>
-            <article class="feature">
+            <article class="feature glass tilt-card reveal">
+              <div class="icon-badge icon-badge--teal icon-badge--mb">
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
               <h3>Quality Control</h3>
               <p>
                 Each product is measured against strict standards for strength, strength-to-weight
@@ -109,9 +178,10 @@
         </div>
       </section>
 
+      <!-- Mission & Vision Cards -->
       <section class="section">
-        <div class="container two-column-grid">
-          <div class="info-card">
+        <div class="container split-grid">
+          <div class="info-card glass gradient-border tilt-card reveal">
             <p class="eyebrow accent">Mission</p>
             <h3>
               To manufacture trusted fiberglass solutions that support modern construction,
@@ -122,7 +192,7 @@
               outcomes for every order and project requirement.
             </p>
           </div>
-          <div class="info-card">
+          <div class="info-card glass gradient-border-secondary tilt-card reveal">
             <p class="eyebrow accent">Vision</p>
             <h3>
               To become a leading reference in fiberglass manufacturing across regional markets and
@@ -136,39 +206,94 @@
         </div>
       </section>
 
+      <!-- 3D Organization Chart Hierarchy Section -->
       <section class="section muted-section">
         <div class="container">
-          <div class="section-heading center">
+          <div class="section-heading center reveal">
+            <p class="eyebrow accent">Organizational Structure</p>
+            <h2>Led by experienced industrial leaders &amp; technical specialists.</h2>
+          </div>
+
+          <div class="org-chart-wrapper reveal">
+            <div class="org-chart">
+              <!-- Executive Level -->
+              <div class="org-level">
+                <div class="org-node org-node--root glass tilt-card">
+                  <strong>Executive Directorate</strong>
+                  <span>General Management &amp; Strategic Operations</span>
+                </div>
+              </div>
+
+              <!-- Department Level -->
+              <div class="org-level">
+                <div class="org-node org-node--dept glass tilt-card">
+                  <strong>Engineering &amp; Detailing</strong>
+                  <span>Structural Design &amp; CAD Modeling</span>
+                </div>
+                <div class="org-node org-node--dept glass tilt-card">
+                  <strong>Plant &amp; Production</strong>
+                  <span>Composite Fabrication &amp; Tooling</span>
+                </div>
+                <div class="org-node org-node--dept glass tilt-card">
+                  <strong>QA / QC &amp; HSE</strong>
+                  <span>Material Testing &amp; Safety Compliance</span>
+                </div>
+              </div>
+
+              <!-- Operational Level -->
+              <div class="org-level">
+                <div class="org-node org-node--team glass tilt-card">
+                  <strong>Mold &amp; Pattern Shop</strong>
+                  <span>CNC Tooling &amp; Master Patterns</span>
+                </div>
+                <div class="org-node org-node--team glass tilt-card">
+                  <strong>GRP / GRC Fabrication</strong>
+                  <span>Contact Molding &amp; Post-Curing</span>
+                </div>
+                <div class="org-node org-node--team glass tilt-card">
+                  <strong>Site Erection Team</strong>
+                  <span>Anchoring, Joining &amp; Commissioning</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section class="section">
+        <div class="container">
+          <div class="section-heading center reveal">
             <p class="eyebrow accent">Why Choose Us</p>
             <h2>Manufacturing with precision, service, and accountability.</h2>
           </div>
           <div class="services-grid four-col">
-            <article class="service-card">
-              <div class="icon">01</div>
+            <article class="service-card glass tilt-card reveal">
+              <div class="icon-badge icon-badge--cyan">01</div>
               <h3>Product Expertise</h3>
               <p>
                 We understand industrial and commercial requirements and tailor solutions around
                 performance, design, and application needs.
               </p>
             </article>
-            <article class="service-card">
-              <div class="icon">02</div>
+            <article class="service-card glass tilt-card reveal">
+              <div class="icon-badge icon-badge--violet">02</div>
               <h3>Quality Production</h3>
               <p>
                 Our processes emphasize material consistency, surface finish quality, and long-term
                 product durability.
               </p>
             </article>
-            <article class="service-card">
-              <div class="icon">03</div>
+            <article class="service-card glass tilt-card reveal">
+              <div class="icon-badge icon-badge--teal">03</div>
               <h3>Customer Focus</h3>
               <p>
                 We work closely with clients to align product performance, delivery schedules, and
                 project timelines.
               </p>
             </article>
-            <article class="service-card">
-              <div class="icon">04</div>
+            <article class="service-card glass tilt-card reveal">
+              <div class="icon-badge icon-badge--orange">04</div>
               <h3>Scalable Supply</h3>
               <p>
                 We support both project-driven requirements and repeat commercial orders with
