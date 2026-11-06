@@ -1,0 +1,98 @@
+================================================================================
+AL SANNA TANK & SHEDS IND LLC - TARGET SEO KEYWORDS & SEARCH METADATA STRATEGY
+Company: Al Sanna Tank & Sheds Ind LLC (الصناع لتصنيع الخزانات والمظلات ذ.م.م)
+Location: Industrial Area, Sharjah, United Arab Emirates
+Phone / WhatsApp: +971 55 644 1028 | Tel: 055 644 1028
+Email: alsannatanksheds@gmail.com
+Website: https://alsannauae.com/
+================================================================================
+
+1. PRIMARY HIGH-INTENT COMMERCIAL KEYWORDS (UAE & GCC):
+--------------------------------------------------------------------------------
+- GRP manufacturer UAE
+- GRP tanks Sharjah
+- Fiberglass storage tanks UAE
+- GRP water tanks Sharjah UAE
+- Industrial GRP sheds UAE
+- Electrical substation kiosk Sharjah
+- GRP car parking sheds UAE
+- GRP manhole covers Sharjah
+- GRP soakaways UAE
+- GRP chemical troughs
+- GRC manufacturer UAE
+- Fiberglass fabrication Sharjah
+- GRE piping systems UAE
+- FRP pipe suppliers UAE
+- Composite fiberglass fabricator Sharjah
+
+2. PRODUCT-SPECIFIC KEYWORD CLUSTERS:
+--------------------------------------------------------------------------------
+A. GRP Tanks & Containment:
+   - GRP cylindrical water tanks
+   - Horizontal GRP storage tanks UAE
+   - Vertical fiberglass chemical tanks
+   - Potable water storage tanks WRAS approved
+   - Underground GRP sewage tanks
+   - Industrial chemical containment vessels
+   - Custom resin storage vessels Sharjah
+
+B. Industrial Sheds, Kiosks & Enclosures:
+   - Industrial GRP sheds Sharjah
+   - Electrical substation kiosk enclosure
+   - GRP outdoor equipment cabins
+   - Weatherproof GRP security cabins UAE
+   - Tensile fabric and GRP car parking sheds
+   - Prefabricated fiberglass kiosks UAE
+
+C. Structural, Drainage & Underground Utilities:
+   - Heavy-duty GRP manhole covers
+   - Trench access covers UAE
+   - Perforated GRP drain cones
+   - GRP soakaway liners Sharjah
+   - GRP underground inspection chambers
+   - Wet pit fiberglass shafts UAE
+   - Industrial GRP chemical troughs and flumes
+
+D. Architectural GRC & Composite Panels:
+   - Fiberglass reinforced panels (FRP/GRP)
+   - GRC wall cladding Sharjah
+   - Glassfiber Reinforced Concrete facades UAE
+   - Architectural decorative screens
+   - Industrial composite partition panels
+
+3. GEO-TARGETED LOCAL SEARCH KEYWORDS:
+--------------------------------------------------------------------------------
+- Fiberglass company in Sharjah Industrial Area
+- GRP tank suppliers in Sharjah UAE
+- Water tank manufacturers in Dubai and Sharjah
+- GRP shed fabrication in Abu Dhabi & Northern Emirates
+- UAE local fiberglass manufacturing factory
+- GRP kiosk suppliers near me UAE
+
+4. ARABIC LOCAL KEYWORDS (الكلمات الدلالية باللغة العربية):
+--------------------------------------------------------------------------------
+- مصنع فيبر جلاس الإمارات
+- خزانات فيبر جلاس الشارقة (GRP Tanks)
+- مظلات مواقف سيارات الشارقة (Car Parking Sheds)
+- كبائن كهرباء فيبر جلاس (Substation Kiosks)
+- أغطية غرف تفتيش فيبر جلاس (GRP Manhole Covers)
+- مواسير وأنابيب فيبر جلاس (GRP Piping)
+- أحواض كيميائية فيبر جلاس (Chemical Troughs)
+- مصنع جي آر سي الشارقة (GRC Manufacturer)
+- شركة تصنيع الخزانات والمظلات في الإمارات
+
+5. ON-PAGE & TECHNICAL SEO IMPLEMENTATION STATUS:
+--------------------------------------------------------------------------------
+[✓] Meta Keywords & Descriptions added to all HTML pages
+[✓] Geo-targeting tags added (geo.region: AE-SH, geo.placename: Sharjah, ICBM/geo.position coordinates)
+[✓] Schema.org JSON-LD Structured Data:
+    - index.html: LocalBusiness & Manufacturer Schema
+    - about.html: AboutPage & Organization Schema
+    - products.html: CollectionPage Schema
+    - product-details.html: Product & Brand Schema
+    - contact.html: ContactPage & LocalBusiness Schema
+[✓] Descriptive, keyword-rich ALT tags on all product photography
+[✓] Canonical URLs configured for all pages
+[✓] OpenGraph & Twitter Card social meta tags with authentic branding
+
+================================================================================

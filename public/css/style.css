@@ -1294,9 +1294,10 @@ select {
   user-select: none;
 }
 
-.coverflow-item img {
+.coverflow-item img,
+.coverflow-item .product-image {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
@@ -1550,36 +1551,36 @@ select {
   margin-top: 0;
 }
 
-/* Placeholders with colourful gradients */
+/* Real product images with subtle glossy brand tint */
 .product-one {
   background:
-    linear-gradient(135deg, rgba(0, 74, 173, 0.7), rgba(0, 194, 255, 0.7)),
-    url("../images/industrial-concepts.svg") center/cover;
+    linear-gradient(180deg, rgba(0, 74, 173, 0.08) 0%, rgba(0, 53, 128, 0.3) 100%),
+    url("../images/products/grp-substation-shed-enclosure.png") center/cover no-repeat;
 }
 .product-two {
   background:
-    linear-gradient(135deg, rgba(123, 92, 255, 0.7), rgba(255, 92, 138, 0.7)),
-    url("../images/industrial-concepts.svg") center/cover;
+    linear-gradient(180deg, rgba(123, 92, 255, 0.08) 0%, rgba(0, 74, 173, 0.3) 100%),
+    url("../images/products/grp-chemical-industrial-trough.png") center/cover no-repeat;
 }
 .product-three {
   background:
-    linear-gradient(135deg, rgba(0, 212, 180, 0.7), rgba(0, 74, 173, 0.7)),
-    url("../images/industrial-concepts.svg") center/cover;
+    linear-gradient(180deg, rgba(0, 194, 255, 0.08) 0%, rgba(0, 74, 173, 0.3) 100%),
+    url("../images/products/grp-horizontal-storage-tank.png") center/cover no-repeat;
 }
 .product-four {
   background:
-    linear-gradient(135deg, rgba(255, 138, 61, 0.7), rgba(255, 92, 138, 0.7)),
-    url("../images/industrial-concepts.svg") center/cover;
+    linear-gradient(180deg, rgba(255, 138, 61, 0.08) 0%, rgba(0, 74, 173, 0.3) 100%),
+    url("../images/products/grp-underground-chamber-manhole.png") center/cover no-repeat;
 }
 .product-five {
   background:
-    linear-gradient(135deg, rgba(0, 74, 173, 0.7), rgba(123, 92, 255, 0.7)),
-    url("../images/industrial-concepts.svg") center/cover;
+    linear-gradient(180deg, rgba(0, 212, 180, 0.08) 0%, rgba(0, 74, 173, 0.3) 100%),
+    url("../images/products/grp-perforated-drain-cones.png") center/cover no-repeat;
 }
 .product-six {
   background:
-    linear-gradient(135deg, rgba(0, 212, 180, 0.7), rgba(0, 194, 255, 0.7)),
-    url("../images/industrial-concepts.svg") center/cover;
+    linear-gradient(180deg, rgba(0, 74, 173, 0.08) 0%, rgba(123, 92, 255, 0.3) 100%),
+    url("../images/products/grp-heavy-duty-manhole-cover.png") center/cover no-repeat;
 }
 
 .flip-trigger-btn {
